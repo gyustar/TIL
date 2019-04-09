@@ -256,7 +256,7 @@ java.util.Objects 클래스는 객체 비교, 해시코드 생성, null 여부, 
   - int  length() : 총 문자의 수를 리턴
   - String  replace(CharSequence target, CharSequence replacament) : target 부분을 replacement로 대치한 새로운 문자열을 리턴
   - String  substring(int beginIndex) : beginIndex 위치에서 끝까지의 문자열을 새로운 문자열로 리턴
-  - String  substring(int beginIndex, int endIndex) : beginIndex 위체에서 endIndex 전까지의 문자열을 새로운 문자열로 리턴
+  - String  substring(int beginIndex, int endIndex) : beginIndex 위치에서 endIndex 전까지의 문자열을 새로운 문자열로 리턴
   - String  toLowerCase() : 알파벳 소문자로 변환한 새로운 문자열을 리턴
   - String  toUpperCase() : 알파벳 대문자로 변환한 새로운 문자열을 리턴
   - String  trim() : 앞뒤 공백을 제거한 새로운 문자열을 리턴
