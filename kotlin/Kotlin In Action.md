@@ -1094,6 +1094,7 @@ class DelegatingCollection<T> (
 // Collection의 구현을 innerList에게 위임한다.
 // DelegatingCollection은 Collection의 구현 방식에 의존하지 않는다.
 ```
+- 위임을 이용하면 컴파일러는 기존 클래스의 메소드에게 요청을 전달하는 메소드들을 자동으로 생성해주며, 메소드를 오버라이드하면 컴파일러가 생성한 메소드 대신 오버라이드한 메소드가 쓰인다. 
 
 - - - -
 ### object 키워드: 클래스 선언과 인스턴스 생성
@@ -1104,7 +1105,7 @@ class DelegatingCollection<T> (
 
 #### 객체 선언: 싱글턴을 쉽게 만들기
 - 코틀린은 자바의 싱글턴 패턴 대신 객체 선언 기능을 사용한다.
-- 객체 선언은 object 키워드로 시작한다.
+- 객체 선언은 class가 아닌 object 키워드로 시작한다.
 - 객체 선언은 클래스를 정의하고 그 클래스의 인스턴스를 만들어서 변수에 저장하는 모든 작업을 단 한 문장으로 처리한다.
 - 객체 선언 안에도 프로퍼티, 메소드, 초기화 블록 등이 들어갈 수 있지만 생성자는 쓸 수 없다. (필요도 없다.)
 - 객체 선언도 클래스나 인스턴스를 상속할 수 있다. 
@@ -1124,7 +1125,7 @@ class DelegatingCollection<T> (
 ```kotlin
 class User private constructor(val nickname: String) {
 // 주 생성자는 비공개
-	compacion object {
+	companion object {
 		fun newSubscribingUser(email: String) =
 			User(email.substringBefore('@'))
 		fun newFacebookUser(accountId: Int) =
@@ -1184,6 +1185,7 @@ println(subscribingUser.nickname)
 - 패키지 수준 함수와 프로퍼티와 더불어, 동반 객체는 자바의 정적 메소드와 필드 정의를 대신한다.
 - 동반 객체도 다른 객체와 마찬가지로 인터페이스를 구현할 수 있다. 외부에서 동반 객체에 대한 확장 함수와 프로퍼티를 정의할 수 있다.
 - 코틀린의 객체 식은 자바의 무명 내부 클래스를 대신한다. 더해서 여러 인터페이스를 구현하거나 객체가 포함된 영역의 변수 값을 변경할 수 있다.
+
 
 
 
